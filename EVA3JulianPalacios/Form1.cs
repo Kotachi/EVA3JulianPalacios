@@ -41,7 +41,8 @@ namespace EVA3JulianPalacios
                 float Nota = Convert.ToSingle(txtNota.Text);
                 float Nota2 = Convert.ToSingle(txtIngNota2.Text);
                 float Nota3 = Convert.ToSingle(txtIngNota3.Text);
-                con.agregarNota(txtIngRut.Text, txtIngCodAsignatura.Text, Nota, Nota2, Nota3, fechaNota);
+                String codAsignatura = cbIngNotas.SelectedText;
+                con.agregarNota(txtIngRut.Text, codAsignatura, Nota, Nota2, Nota3, fechaNota);
             }
             catch (FormatException FE)
             {
@@ -88,6 +89,8 @@ namespace EVA3JulianPalacios
             txtIngDescAsignatura.Visible = true;
             lbCodAsignatura.Visible = true;
             txtIngNCodAsignatura.Visible = true;
+            cbIngNotas.Visible = true;
+            lbIngNCodAsignatura.Visible = true;
 
             lbIngNombre.Visible = false;
             lbIngRut.Visible = false;
@@ -121,6 +124,8 @@ namespace EVA3JulianPalacios
             txtIngDescAsignatura.Visible = false;
             lbCodAsignatura.Visible = false;
             txtIngNCodAsignatura.Visible = false;
+            cbIngNotas.Visible = false;
+            lbIngNCodAsignatura.Visible = false;
 
             lbIngFechaNota.Visible = false;
             lbIngNota.Visible = false;
@@ -150,12 +155,14 @@ namespace EVA3JulianPalacios
             txtIngEmail.Visible = false;
             txtIngNombre.Visible = false;
 
-            lbCodAsignatura.Visible = true;
-            lbDescAsignatura.Visible = false;
-            txtIngCodAsignatura.Visible = true;
-            txtIngDescAsignatura.Visible = false;
             lbCodAsignatura.Visible = false;
+            lbDescAsignatura.Visible = false;
+            txtIngCodAsignatura.Visible = false;
+            txtIngDescAsignatura.Visible = false;
+            lbCodAsignatura.Visible = true;
             txtIngNCodAsignatura.Visible = false;
+            cbIngNotas.Visible = true;
+            lbIngNCodAsignatura.Visible = false;
 
         }
 
@@ -256,7 +263,7 @@ namespace EVA3JulianPalacios
             con.modificarRutAlumno(txtIngRut.Text,txtIngNuevoRut.Text);
             limpiar();
         }
-
+        //Activar los texbox y labels
         private void mnModificarAlumno_Click(object sender, EventArgs e)
         {
             txtIngNuevoRut.Visible = true;

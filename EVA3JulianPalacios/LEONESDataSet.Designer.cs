@@ -1779,11 +1779,17 @@ SELECT rutAlumno, nombreAlumno, email FROM Alumnos WHERE (rutAlumno = @rutAlumno
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT rutAlumno, nombreAlumno, email FROM dbo.Alumnos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        rutAlumno, nombreAlumno, email\r\nFROM            Alumnos\r\nWHERE     " +
+                "   (rutAlumno = @rutAlumno)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rutAlumno", global::System.Data.SqlDbType.VarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "rutAlumno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1808,6 +1814,25 @@ SELECT rutAlumno, nombreAlumno, email FROM Alumnos WHERE (rutAlumno = @rutAlumno
             LEONESDataSet.AlumnosDataTable dataTable = new LEONESDataSet.AlumnosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int buscarAlumno(LEONESDataSet.AlumnosDataTable dataTable, string rutAlumno) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((rutAlumno == null)) {
+                throw new global::System.ArgumentNullException("rutAlumno");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(rutAlumno));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

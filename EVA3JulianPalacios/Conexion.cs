@@ -431,5 +431,33 @@ namespace EVA3JulianPalacios
             }
         }
 
+        public SqlCommand llenarAlumno ()
+        {
+            try
+            {
+                conexion.Open();
+                command = new SqlCommand("SELECT * FROM Alumnos )", conexion);
+                int insertOK = command.ExecuteNonQuery();
+                if (insertOK >= 0)
+                {
+                    MessageBox.Show("Alumno ingresado");
+                    return command;
+                }
+                else
+                {
+                    MessageBox.Show("Alumno no encontrado.");
+                    return null;
+                }
+                command.Dispose();
+                conexion.Close();
+               
+            }
+            catch (SqlException se)
+            {
+                MessageBox.Show(se.Message);
+                return null;
+            }
+        }
+
     }
 }

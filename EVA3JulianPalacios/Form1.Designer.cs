@@ -43,12 +43,9 @@
             this.txtIngDescAsignatura = new System.Windows.Forms.TextBox();
             this.lbCodAsignatura = new System.Windows.Forms.Label();
             this.lbDescAsignatura = new System.Windows.Forms.Label();
-            this.btnAgregarAlumno = new System.Windows.Forms.Button();
             this.btnMostrarAlumnosDG = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnAgregarAsignatura = new System.Windows.Forms.Button();
-            this.btnAgregarNota = new System.Windows.Forms.Button();
+            this.btnMostrarAsignatura = new System.Windows.Forms.Button();
+            this.btnMostrarNotas = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnAgregar = new System.Windows.Forms.ToolStripMenuItem();
             this.mnAgregarAlumno = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +75,6 @@
             this.lbIngNota3 = new System.Windows.Forms.Label();
             this.txtIngNuevoRut = new System.Windows.Forms.TextBox();
             this.lbIngNuevoRut = new System.Windows.Forms.Label();
-            this.txtIngNCodAsignatura = new System.Windows.Forms.TextBox();
             this.lbIngNCodAsignatura = new System.Windows.Forms.Label();
             this.cbIngNotas = new System.Windows.Forms.ComboBox();
             this.asignaturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -99,7 +95,7 @@
             // 
             // txtIngNombre
             // 
-            this.txtIngNombre.Location = new System.Drawing.Point(304, 195);
+            this.txtIngNombre.Location = new System.Drawing.Point(285, 195);
             this.txtIngNombre.Name = "txtIngNombre";
             this.txtIngNombre.Size = new System.Drawing.Size(185, 20);
             this.txtIngNombre.TabIndex = 1;
@@ -126,7 +122,7 @@
             // lbIngNombre
             // 
             this.lbIngNombre.AutoSize = true;
-            this.lbIngNombre.Location = new System.Drawing.Point(301, 179);
+            this.lbIngNombre.Location = new System.Drawing.Point(282, 179);
             this.lbIngNombre.Name = "lbIngNombre";
             this.lbIngNombre.Size = new System.Drawing.Size(85, 13);
             this.lbIngNombre.TabIndex = 4;
@@ -185,7 +181,7 @@
             // 
             // txtIngCodAsignatura
             // 
-            this.txtIngCodAsignatura.Location = new System.Drawing.Point(113, 107);
+            this.txtIngCodAsignatura.Location = new System.Drawing.Point(285, 116);
             this.txtIngCodAsignatura.Name = "txtIngCodAsignatura";
             this.txtIngCodAsignatura.Size = new System.Drawing.Size(128, 20);
             this.txtIngCodAsignatura.TabIndex = 11;
@@ -193,7 +189,7 @@
             // 
             // txtIngDescAsignatura
             // 
-            this.txtIngDescAsignatura.Location = new System.Drawing.Point(304, 107);
+            this.txtIngDescAsignatura.Location = new System.Drawing.Point(476, 117);
             this.txtIngDescAsignatura.Multiline = true;
             this.txtIngDescAsignatura.Name = "txtIngDescAsignatura";
             this.txtIngDescAsignatura.Size = new System.Drawing.Size(347, 20);
@@ -203,78 +199,50 @@
             // lbCodAsignatura
             // 
             this.lbCodAsignatura.AutoSize = true;
-            this.lbCodAsignatura.Location = new System.Drawing.Point(110, 91);
+            this.lbCodAsignatura.Location = new System.Drawing.Point(109, 100);
             this.lbCodAsignatura.Name = "lbCodAsignatura";
-            this.lbCodAsignatura.Size = new System.Drawing.Size(131, 13);
+            this.lbCodAsignatura.Size = new System.Drawing.Size(93, 13);
             this.lbCodAsignatura.TabIndex = 13;
-            this.lbCodAsignatura.Text = "Ingrese Codigo Asignatura";
+            this.lbCodAsignatura.Text = "Codigo Asignatura";
             this.lbCodAsignatura.Visible = false;
             // 
             // lbDescAsignatura
             // 
             this.lbDescAsignatura.AutoSize = true;
-            this.lbDescAsignatura.Location = new System.Drawing.Point(301, 91);
+            this.lbDescAsignatura.Location = new System.Drawing.Point(473, 101);
             this.lbDescAsignatura.Name = "lbDescAsignatura";
             this.lbDescAsignatura.Size = new System.Drawing.Size(154, 13);
             this.lbDescAsignatura.TabIndex = 14;
             this.lbDescAsignatura.Text = "Ingrese Descripcion Asignatura";
             this.lbDescAsignatura.Visible = false;
             // 
-            // btnAgregarAlumno
-            // 
-            this.btnAgregarAlumno.Location = new System.Drawing.Point(113, 379);
-            this.btnAgregarAlumno.Name = "btnAgregarAlumno";
-            this.btnAgregarAlumno.Size = new System.Drawing.Size(100, 23);
-            this.btnAgregarAlumno.TabIndex = 15;
-            this.btnAgregarAlumno.Text = "Agregar Alumno";
-            this.btnAgregarAlumno.UseVisualStyleBackColor = true;
-            this.btnAgregarAlumno.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
-            // 
             // btnMostrarAlumnosDG
             // 
             this.btnMostrarAlumnosDG.Location = new System.Drawing.Point(112, 453);
             this.btnMostrarAlumnosDG.Name = "btnMostrarAlumnosDG";
-            this.btnMostrarAlumnosDG.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrarAlumnosDG.Size = new System.Drawing.Size(111, 23);
             this.btnMostrarAlumnosDG.TabIndex = 16;
             this.btnMostrarAlumnosDG.Text = "Mostrar Alumnos";
             this.btnMostrarAlumnosDG.UseVisualStyleBackColor = true;
             this.btnMostrarAlumnosDG.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // btnEliminar
+            // btnMostrarAsignatura
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(229, 453);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 17;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnMostrarAsignatura.Location = new System.Drawing.Point(285, 453);
+            this.btnMostrarAsignatura.Name = "btnMostrarAsignatura";
+            this.btnMostrarAsignatura.Size = new System.Drawing.Size(119, 23);
+            this.btnMostrarAsignatura.TabIndex = 17;
+            this.btnMostrarAsignatura.Text = "Mostrar Asignaturas";
+            this.btnMostrarAsignatura.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
+            // btnMostrarNotas
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(355, 453);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarAsignatura
-            // 
-            this.btnAgregarAsignatura.Location = new System.Drawing.Point(256, 379);
-            this.btnAgregarAsignatura.Name = "btnAgregarAsignatura";
-            this.btnAgregarAsignatura.Size = new System.Drawing.Size(111, 23);
-            this.btnAgregarAsignatura.TabIndex = 19;
-            this.btnAgregarAsignatura.Text = "Agregar Asignatura";
-            this.btnAgregarAsignatura.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarNota
-            // 
-            this.btnAgregarNota.Location = new System.Drawing.Point(402, 379);
-            this.btnAgregarNota.Name = "btnAgregarNota";
-            this.btnAgregarNota.Size = new System.Drawing.Size(87, 23);
-            this.btnAgregarNota.TabIndex = 20;
-            this.btnAgregarNota.Text = "Agregar Nota";
-            this.btnAgregarNota.UseVisualStyleBackColor = true;
+            this.btnMostrarNotas.Location = new System.Drawing.Point(476, 453);
+            this.btnMostrarNotas.Name = "btnMostrarNotas";
+            this.btnMostrarNotas.Size = new System.Drawing.Size(116, 23);
+            this.btnMostrarNotas.TabIndex = 18;
+            this.btnMostrarNotas.Text = "Mostrar Notas";
+            this.btnMostrarNotas.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -476,7 +444,7 @@
             // 
             // txtIngNota2
             // 
-            this.txtIngNota2.Location = new System.Drawing.Point(304, 294);
+            this.txtIngNota2.Location = new System.Drawing.Point(285, 294);
             this.txtIngNota2.Name = "txtIngNota2";
             this.txtIngNota2.Size = new System.Drawing.Size(100, 20);
             this.txtIngNota2.TabIndex = 25;
@@ -493,7 +461,7 @@
             // lbIngNota2
             // 
             this.lbIngNota2.AutoSize = true;
-            this.lbIngNota2.Location = new System.Drawing.Point(301, 278);
+            this.lbIngNota2.Location = new System.Drawing.Point(282, 278);
             this.lbIngNota2.Name = "lbIngNota2";
             this.lbIngNota2.Size = new System.Drawing.Size(77, 13);
             this.lbIngNota2.TabIndex = 27;
@@ -528,18 +496,10 @@
             this.lbIngNuevoRut.Text = "Ingresar Nuevo Rut";
             this.lbIngNuevoRut.Visible = false;
             // 
-            // txtIngNCodAsignatura
-            // 
-            this.txtIngNCodAsignatura.Location = new System.Drawing.Point(719, 107);
-            this.txtIngNCodAsignatura.Name = "txtIngNCodAsignatura";
-            this.txtIngNCodAsignatura.Size = new System.Drawing.Size(163, 20);
-            this.txtIngNCodAsignatura.TabIndex = 31;
-            this.txtIngNCodAsignatura.Visible = false;
-            // 
             // lbIngNCodAsignatura
             // 
             this.lbIngNCodAsignatura.AutoSize = true;
-            this.lbIngNCodAsignatura.Location = new System.Drawing.Point(716, 91);
+            this.lbIngNCodAsignatura.Location = new System.Drawing.Point(282, 100);
             this.lbIngNCodAsignatura.Name = "lbIngNCodAsignatura";
             this.lbIngNCodAsignatura.Size = new System.Drawing.Size(166, 13);
             this.lbIngNCodAsignatura.TabIndex = 32;
@@ -553,11 +513,12 @@
             this.cbIngNotas.DataSource = this.asignaturasBindingSource;
             this.cbIngNotas.DisplayMember = "CodAsignatura";
             this.cbIngNotas.FormattingEnabled = true;
-            this.cbIngNotas.Location = new System.Drawing.Point(617, 361);
+            this.cbIngNotas.Location = new System.Drawing.Point(112, 116);
             this.cbIngNotas.MaxDropDownItems = 100;
             this.cbIngNotas.Name = "cbIngNotas";
             this.cbIngNotas.Size = new System.Drawing.Size(121, 21);
             this.cbIngNotas.TabIndex = 33;
+            this.cbIngNotas.Visible = false;
             // 
             // asignaturasBindingSource
             // 
@@ -580,7 +541,6 @@
             this.ClientSize = new System.Drawing.Size(927, 533);
             this.Controls.Add(this.cbIngNotas);
             this.Controls.Add(this.lbIngNCodAsignatura);
-            this.Controls.Add(this.txtIngNCodAsignatura);
             this.Controls.Add(this.lbIngNuevoRut);
             this.Controls.Add(this.txtIngNuevoRut);
             this.Controls.Add(this.lbIngNota3);
@@ -590,12 +550,9 @@
             this.Controls.Add(this.rbNota);
             this.Controls.Add(this.rbAlumno);
             this.Controls.Add(this.rbAsignatura);
-            this.Controls.Add(this.btnAgregarNota);
-            this.Controls.Add(this.btnAgregarAsignatura);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnMostrarNotas);
+            this.Controls.Add(this.btnMostrarAsignatura);
             this.Controls.Add(this.btnMostrarAlumnosDG);
-            this.Controls.Add(this.btnAgregarAlumno);
             this.Controls.Add(this.lbDescAsignatura);
             this.Controls.Add(this.lbCodAsignatura);
             this.Controls.Add(this.txtIngDescAsignatura);
@@ -640,12 +597,9 @@
         private System.Windows.Forms.TextBox txtIngDescAsignatura;
         private System.Windows.Forms.Label lbCodAsignatura;
         private System.Windows.Forms.Label lbDescAsignatura;
-        private System.Windows.Forms.Button btnAgregarAlumno;
         private System.Windows.Forms.Button btnMostrarAlumnosDG;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnAgregarAsignatura;
-        private System.Windows.Forms.Button btnAgregarNota;
+        private System.Windows.Forms.Button btnMostrarAsignatura;
+        private System.Windows.Forms.Button btnMostrarNotas;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnAgregar;
         private System.Windows.Forms.ToolStripMenuItem mnAgregarAlumno;
@@ -675,7 +629,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnModificarNota2;
         private System.Windows.Forms.ToolStripMenuItem mnModificarNota3;
         private System.Windows.Forms.ToolStripMenuItem mnModificarAsignatura;
-        private System.Windows.Forms.TextBox txtIngNCodAsignatura;
         private System.Windows.Forms.Label lbIngNCodAsignatura;
         private System.Windows.Forms.ComboBox cbIngNotas;
         private LEONESDataSet lEONESDataSet;
