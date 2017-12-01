@@ -2526,16 +2526,37 @@ SELECT rutAlumno, CodAsignatura, Nota1, Nota2, Nota3, FechaNota FROM Notas WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT rutAlumno, CodAsignatura, Nota1, Nota2, Nota3, FechaNota FROM dbo.Notas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        rutAlumno, CodAsignatura, Nota1, Nota2, Nota3, FechaNota\r\nFROM     " +
-                "       Notas";
+            this._commandCollection[1].CommandText = "SELECT        rutAlumno, CodAsignatura, Nota1, FechaNota\r\nFROM            Notas\r\n" +
+                "WHERE        (Nota1 = @Nota1) AND (CodAsignatura = @codAsignatura)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nota1", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Nota1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codAsignatura", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CodAsignatura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        rutAlumno, CodAsignatura, Nota2, FechaNota\r\nFROM            Notas\r\n" +
+                "WHERE        (Nota2 = @Nota1) AND (CodAsignatura = @codAsignatura)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nota1", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Nota2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codAsignatura", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CodAsignatura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        rutAlumno, CodAsignatura, Nota3, FechaNota\r\nFROM            Notas\r\n" +
+                "WHERE        (Nota3 = @Nota1) AND (CodAsignatura = @codAsignatura)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nota1", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Nota3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codAsignatura", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CodAsignatura", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT        rutAlumno, CodAsignatura, Nota1, Nota2, Nota3, FechaNota\r\nFROM     " +
+                "       Notas";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2566,8 +2587,152 @@ SELECT rutAlumno, CodAsignatura, Nota1, Nota2, Nota3, FechaNota FROM Notas WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int MostrarDatos(LEONESDataSet.NotasDataTable dataTable) {
+        public virtual int FrecuenciaNota1(LEONESDataSet.NotasDataTable dataTable, global::System.Nullable<double> Nota1, string codAsignatura) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual LEONESDataSet.NotasDataTable MostrarFrecuenciaNota1(global::System.Nullable<double> Nota1, string codAsignatura) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            LEONESDataSet.NotasDataTable dataTable = new LEONESDataSet.NotasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FrecuenciaNota2(LEONESDataSet.NotasDataTable dataTable, global::System.Nullable<double> Nota1, string codAsignatura) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual LEONESDataSet.NotasDataTable mostrarFrecNota2(global::System.Nullable<double> Nota1, string codAsignatura) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            LEONESDataSet.NotasDataTable dataTable = new LEONESDataSet.NotasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FrecuenciaNota3(LEONESDataSet.NotasDataTable dataTable, global::System.Nullable<double> Nota1, string codAsignatura) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual LEONESDataSet.NotasDataTable mostrarFrecNota3(global::System.Nullable<double> Nota1, string codAsignatura) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Nota1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((double)(Nota1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((codAsignatura == null)) {
+                throw new global::System.ArgumentNullException("codAsignatura");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(codAsignatura));
+            }
+            LEONESDataSet.NotasDataTable dataTable = new LEONESDataSet.NotasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int MostrarDatos(LEONESDataSet.NotasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

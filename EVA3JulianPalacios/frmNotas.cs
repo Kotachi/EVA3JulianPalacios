@@ -54,8 +54,6 @@ namespace EVA3JulianPalacios
 
         }
         
-        
-
         private void btnMostrarPromedio_Click(object sender, EventArgs e)
         {
             
@@ -102,6 +100,30 @@ namespace EVA3JulianPalacios
                 MessageBox.Show("El promedio del alumno es " + promedio + "\n Presenta examen.");
             }
 
+        }
+
+        //Frecuencia Nota1
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            double frecNota = Convert.ToDouble(txtFrecNotas.Text);
+            String codAsignatura = cbMostrarAsignatura.SelectedText;
+            this.notasTableAdapter.FrecuenciaNota1(this.lEONESDataSet.Notas,frecNota,codAsignatura);
+        }
+
+        private void btnFrecNota2_Click(object sender, EventArgs e)
+        {
+            double frecNota = Convert.ToDouble(txtFrecNotas.Text);
+            String codAsignatura = cbMostrarAsignatura.SelectedText;
+            MessageBox.Show(codAsignatura);
+            this.notasTableAdapter.FrecuenciaNota2(this.lEONESDataSet.Notas, frecNota, codAsignatura);
+        }
+
+        private void btnFrecNota3_Click(object sender, EventArgs e)
+        {
+            double frecNota = Convert.ToDouble(txtFrecNotas.Text);
+            String codAsignatura = cbMostrarAsignatura.SelectedText;
+            MessageBox.Show(codAsignatura);
+            this.notasTableAdapter.FrecuenciaNota3(this.lEONESDataSet.Notas, frecNota, codAsignatura);
         }
     }
 }

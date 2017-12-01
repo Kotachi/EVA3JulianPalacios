@@ -44,6 +44,10 @@
             this.mostrarDatosToolStrip = new System.Windows.Forms.ToolStrip();
             this.btnMostrarDatos = new System.Windows.Forms.ToolStripButton();
             this.btnMostrarPromedio = new System.Windows.Forms.ToolStripButton();
+            this.btnFrecNota1 = new System.Windows.Forms.ToolStripButton();
+            this.btnFrecNota2 = new System.Windows.Forms.ToolStripButton();
+            this.btnFrecNota3 = new System.Windows.Forms.ToolStripButton();
+            this.txtFrecNotas = new System.Windows.Forms.ToolStripTextBox();
             this.notasTableAdapter = new EVA3JulianPalacios.LEONESDataSetTableAdapters.NotasTableAdapter();
             this.cbMostrarAsignatura = new System.Windows.Forms.ComboBox();
             this.cbMostrarRut = new System.Windows.Forms.ComboBox();
@@ -151,7 +155,11 @@
             // 
             this.mostrarDatosToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnMostrarDatos,
-            this.btnMostrarPromedio});
+            this.btnMostrarPromedio,
+            this.btnFrecNota1,
+            this.btnFrecNota2,
+            this.btnFrecNota3,
+            this.txtFrecNotas});
             this.mostrarDatosToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mostrarDatosToolStrip.Name = "mostrarDatosToolStrip";
             this.mostrarDatosToolStrip.Size = new System.Drawing.Size(915, 25);
@@ -176,6 +184,43 @@
             this.btnMostrarPromedio.Text = "Promedio";
             this.btnMostrarPromedio.Click += new System.EventHandler(this.btnMostrarPromedio_Click);
             // 
+            // btnFrecNota1
+            // 
+            this.btnFrecNota1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFrecNota1.Image = ((System.Drawing.Image)(resources.GetObject("btnFrecNota1.Image")));
+            this.btnFrecNota1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFrecNota1.Name = "btnFrecNota1";
+            this.btnFrecNota1.Size = new System.Drawing.Size(103, 22);
+            this.btnFrecNota1.Text = "Frecuencia Nota1";
+            this.btnFrecNota1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // btnFrecNota2
+            // 
+            this.btnFrecNota2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFrecNota2.Image = ((System.Drawing.Image)(resources.GetObject("btnFrecNota2.Image")));
+            this.btnFrecNota2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFrecNota2.Name = "btnFrecNota2";
+            this.btnFrecNota2.Size = new System.Drawing.Size(106, 22);
+            this.btnFrecNota2.Text = "Frecuencia Nota 2";
+            this.btnFrecNota2.Click += new System.EventHandler(this.btnFrecNota2_Click);
+            // 
+            // btnFrecNota3
+            // 
+            this.btnFrecNota3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFrecNota3.Image = ((System.Drawing.Image)(resources.GetObject("btnFrecNota3.Image")));
+            this.btnFrecNota3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFrecNota3.Name = "btnFrecNota3";
+            this.btnFrecNota3.Size = new System.Drawing.Size(106, 22);
+            this.btnFrecNota3.Text = "Frecuencia Nota 3";
+            this.btnFrecNota3.Click += new System.EventHandler(this.btnFrecNota3_Click);
+            // 
+            // txtFrecNotas
+            // 
+            this.txtFrecNotas.BackColor = System.Drawing.SystemColors.Info;
+            this.txtFrecNotas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFrecNotas.Name = "txtFrecNotas";
+            this.txtFrecNotas.Size = new System.Drawing.Size(100, 25);
+            // 
             // notasTableAdapter
             // 
             this.notasTableAdapter.ClearBeforeFill = true;
@@ -183,9 +228,9 @@
             // cbMostrarAsignatura
             // 
             this.cbMostrarAsignatura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbMostrarAsignatura.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.notasBindingSource, "CodAsignatura", true));
             this.cbMostrarAsignatura.DataSource = this.notasBindingSource;
             this.cbMostrarAsignatura.DisplayMember = "CodAsignatura";
+            this.cbMostrarAsignatura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMostrarAsignatura.FormattingEnabled = true;
             this.cbMostrarAsignatura.Location = new System.Drawing.Point(290, 279);
             this.cbMostrarAsignatura.Name = "cbMostrarAsignatura";
@@ -195,9 +240,9 @@
             // cbMostrarRut
             // 
             this.cbMostrarRut.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbMostrarRut.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.notasBindingSource, "rutAlumno", true));
             this.cbMostrarRut.DataSource = this.notasBindingSource;
             this.cbMostrarRut.DisplayMember = "rutAlumno";
+            this.cbMostrarRut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMostrarRut.FormattingEnabled = true;
             this.cbMostrarRut.Location = new System.Drawing.Point(60, 279);
             this.cbMostrarRut.Name = "cbMostrarRut";
@@ -247,5 +292,9 @@
         private System.Windows.Forms.ToolStripButton btnMostrarPromedio;
         private System.Windows.Forms.ComboBox cbMostrarAsignatura;
         private System.Windows.Forms.ComboBox cbMostrarRut;
+        private System.Windows.Forms.ToolStripButton btnFrecNota1;
+        private System.Windows.Forms.ToolStripTextBox txtFrecNotas;
+        private System.Windows.Forms.ToolStripButton btnFrecNota2;
+        private System.Windows.Forms.ToolStripButton btnFrecNota3;
     }
 }

@@ -155,7 +155,7 @@
             this.dtpFechaNota.Name = "dtpFechaNota";
             this.dtpFechaNota.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaNota.TabIndex = 8;
-            this.dtpFechaNota.Value = new System.DateTime(2017, 11, 27, 1, 25, 0, 0);
+            this.dtpFechaNota.Value = new System.DateTime(2017, 12, 1, 0, 0, 0, 0);
             this.dtpFechaNota.Visible = false;
             this.dtpFechaNota.ValueChanged += new System.EventHandler(this.dtpFechaNota_ValueChanged);
             // 
@@ -511,7 +511,6 @@
             // cbIngNotas
             // 
             this.cbIngNotas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cbIngNotas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.asignaturasBindingSource, "CodAsignatura", true));
             this.cbIngNotas.DataSource = this.asignaturasBindingSource;
             this.cbIngNotas.DisplayMember = "CodAsignatura";
             this.cbIngNotas.FormattingEnabled = true;
