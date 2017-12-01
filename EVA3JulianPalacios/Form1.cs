@@ -75,7 +75,7 @@ namespace EVA3JulianPalacios
 
         public void limpiar()
         {
-            txtIngCodAsignatura.Text = txtIngDescAsignatura.Text = txtIngRut.Text = txtIngNombre.Text = txtIngEmail.Text = txtNota.Text = txtIngNota2.Text = txtIngNota3.Text = txtIngNuevoRut.Text = txtIngNCodAsignatura.Text = "";
+            txtIngCodAsignatura.Text = txtIngDescAsignatura.Text = txtIngRut.Text = txtIngNombre.Text = txtIngEmail.Text = txtNota.Text = txtIngNota2.Text = txtIngNota3.Text = txtIngNuevoRut.Text = txtIngCodAsignatura.Text = "";
             dtpFechaNota.ResetText();
         }
 
@@ -88,7 +88,7 @@ namespace EVA3JulianPalacios
             lbDescAsignatura.Visible = true;
             txtIngDescAsignatura.Visible = true;
             lbCodAsignatura.Visible = true;
-            txtIngNCodAsignatura.Visible = true;
+            //txtIngNCodAsignatura.Visible = true;
             cbIngNotas.Visible = true;
             lbIngNCodAsignatura.Visible = true;
 
@@ -123,7 +123,7 @@ namespace EVA3JulianPalacios
             lbDescAsignatura.Visible = false;
             txtIngDescAsignatura.Visible = false;
             lbCodAsignatura.Visible = false;
-            txtIngNCodAsignatura.Visible = false;
+            
             cbIngNotas.Visible = false;
             lbIngNCodAsignatura.Visible = false;
 
@@ -160,7 +160,7 @@ namespace EVA3JulianPalacios
             txtIngCodAsignatura.Visible = false;
             txtIngDescAsignatura.Visible = false;
             lbCodAsignatura.Visible = true;
-            txtIngNCodAsignatura.Visible = false;
+           
             cbIngNotas.Visible = true;
             lbIngNCodAsignatura.Visible = false;
 
@@ -289,7 +289,7 @@ namespace EVA3JulianPalacios
 
         private void mnModificarAsignatura_Click(object sender, EventArgs e)
         {
-            con.ModificarAsignatura(txtIngCodAsignatura.Text, txtIngDescAsignatura.Text, txtIngNCodAsignatura.Text);
+            con.ModificarAsignatura(txtIngCodAsignatura.Text, txtIngDescAsignatura.Text, txtIngCodAsignatura.Text);
             limpiar();
         }
 
@@ -332,6 +332,18 @@ namespace EVA3JulianPalacios
 
         }
 
-       
+        private void btnMostrarAsignatura_Click(object sender, EventArgs e)
+        {
+            frmAsignatura mostrarAsignatura = new frmAsignatura();
+            mostrarAsignatura.Show();
+            this.Hide();
+        }
+
+        private void btnMostrarNotas_Click(object sender, EventArgs e)
+        {
+            frmNotas mostrarNotas = new frmNotas();
+            mostrarNotas.Show();
+            this.Hide();
+        }
     }
 }

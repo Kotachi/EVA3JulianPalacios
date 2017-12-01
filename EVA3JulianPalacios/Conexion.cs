@@ -441,15 +441,17 @@ namespace EVA3JulianPalacios
                 if (insertOK >= 0)
                 {
                     MessageBox.Show("Alumno ingresado");
+
                     return command;
+                   
                 }
                 else
                 {
                     MessageBox.Show("Alumno no encontrado.");
                     return null;
                 }
-                command.Dispose();
-                conexion.Close();
+                //command.Dispose();
+               
                
             }
             catch (SqlException se)

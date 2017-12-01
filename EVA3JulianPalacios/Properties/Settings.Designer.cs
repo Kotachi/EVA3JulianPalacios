@@ -33,5 +33,17 @@ namespace EVA3JulianPalacios.Properties {
                 return ((string)(this["LEONESConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cbMostrarAsignatura")]
+        public string notasBindingSource {
+            get {
+                return ((string)(this["notasBindingSource"]));
+            }
+            set {
+                this["notasBindingSource"] = value;
+            }
+        }
     }
 }

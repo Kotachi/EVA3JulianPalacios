@@ -68,11 +68,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignatura.Designer.cs">
+      <DependentUpon>frmAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMostrarDatos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMostrarDatos.Designer.cs">
       <DependentUpon>frmMostrarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotas.Designer.cs">
+      <DependentUpon>frmNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LEONESDataSet.cs">
+      <DependentUpon>LEONESDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LEONESDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,8 +99,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignatura.resx">
+      <DependentUpon>frmAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMostrarDatos.resx">
       <DependentUpon>frmMostrarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotas.resx">
+      <DependentUpon>frmNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

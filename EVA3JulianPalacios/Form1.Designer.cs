@@ -234,6 +234,7 @@
             this.btnMostrarAsignatura.TabIndex = 17;
             this.btnMostrarAsignatura.Text = "Mostrar Asignaturas";
             this.btnMostrarAsignatura.UseVisualStyleBackColor = true;
+            this.btnMostrarAsignatura.Click += new System.EventHandler(this.btnMostrarAsignatura_Click);
             // 
             // btnMostrarNotas
             // 
@@ -243,6 +244,7 @@
             this.btnMostrarNotas.TabIndex = 18;
             this.btnMostrarNotas.Text = "Mostrar Notas";
             this.btnMostrarNotas.UseVisualStyleBackColor = true;
+            this.btnMostrarNotas.Click += new System.EventHandler(this.btnMostrarNotas_Click);
             // 
             // menuStrip1
             // 
